@@ -1,13 +1,12 @@
 .main {
-  width: 100%;
-
-  &__container {
-    display: grid;
-    grid-template-columns: 1fr;
-    width: 100%;
-    justify-items: center;
-    align-content: center;
-  }
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-content: center;
+  gap: 20px;
+  padding: 20px;
+  margin: 0 auto;
+  width: 944px;
 }
 
 .card {
@@ -18,26 +17,12 @@
   width: 200px;
   border: 1px solid $border-white;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   padding: 32px 16px 16px;
 
   &:hover {
     transform: scale(1.2);
-    .card__button {
-      background-color: $bg-white;
-      border: 1px solid $color-blue;
-      color: $color-blue;
-    }
-  }
-
-  &__wrapper {
-    @include transition-transform;
-
-    width: 167px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-sizing: border-box;
   }
 
   &__img {
@@ -124,43 +109,30 @@
   text-align: center;
   background-color: $color-blue;
   padding: 12px 0;
+
+  &:hover {
+    background-color: $bg-white;
+    border: 1px solid $color-blue;
+    color: $color-blue;
+  }
 }
 
 @media screen and (min-width: 488px) {
-  .main__container {
+  .main {
     grid-template-columns: repeat(2, 1fr);
-    justify-items: center;
-    margin: 0 auto;
-    width: 100%;
-    padding: 50px 0;
-  }
-  .header__container {
-    display: none;
   }
 }
 
 @media screen and (min-width: 768px) {
-  .main__container {
+  .main {
     grid-template-columns: repeat(3, 1fr);
-    justify-items: center;
-    margin: 0 auto;
-    width: 100%;
-  }
-  .header__container {
-    display: none;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .main__container {
+  .main {
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr 1fr;
-    width: 944px;
-    margin: 0 auto;
-    padding: 50px 40px;
     gap: 46px 48px;
-  }
-  .header__container {
-    display: flex;
+    padding: 50px 40px;
   }
 }
